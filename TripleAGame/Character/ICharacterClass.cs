@@ -9,9 +9,12 @@ namespace TripleAGame
         // properties
         string Name { get; }
         int Level { get; set; }
+        int StartingHealth { get; }
         int HealthPerLevel { get; }
-        
+        int MaxDamage { get; }
+        int Attacks { get; }
+
         //methods 
-        int TotalHealth(int a, int b);
+        int TotalHealth(int a, int b, int c);
     }
 }

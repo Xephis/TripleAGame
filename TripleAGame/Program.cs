@@ -38,16 +38,17 @@ namespace TripleAGame
 
                 
             }
-
-            // calculate max health based off character level and hp per level stat
-            int MaxHealth = PlayerCharacter.TotalHealth(PlayerCharacter.Level,PlayerCharacter.HealthPerLevel);
-
+            
             //clear the screen and start the game.
             Console.Clear();
             Console.WriteLine("--------------");
             Console.WriteLine("Tale of Legends: " + PlayerCharacter.Name);
             Console.WriteLine("--------------");
-            Console.WriteLine($"HP: {MaxHealth} | Level: {PlayerCharacter.Level}");
+            Console.WriteLine($"HP: {PlayerCharacter.StartingHealth} | Level: {PlayerCharacter.Level}");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+
             
 
         }

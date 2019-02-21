@@ -8,19 +8,25 @@ namespace TripleAGame
     {
         public string Name { get; }
         public int Level { get; set; }
+        public int StartingHealth { get; }
         public int HealthPerLevel { get; }
+        public int MaxDamage { get; }
+        public int Attacks { get; }
 
 
         public PeasantClass()
         {
             Name = "Peasant";
+            StartingHealth = 10;
             HealthPerLevel = 1;
             Level = 1;
+            MaxDamage = 1;
+            Attacks = 1;
         }
 
-        int ICharacterClass.TotalHealth(int a, int b)
+        int ICharacterClass.TotalHealth(int a, int b, int c)
         {
-            return a * b;
+            return a + (b * c);
         }
 
     }
@@ -28,19 +34,26 @@ namespace TripleAGame
     {
         public string Name { get; }
         public int Level { get; set; }
+        public int StartingHealth { get; }
         public int HealthPerLevel { get;}
+        public int MaxDamage { get; }
+        public int Attacks { get; }
         
 
         public WarriorClass()
         {
             Name = "Warrior";
+            StartingHealth = 100;
             HealthPerLevel = 10;
             Level = 1;
+            MaxDamage = 8;
+            Attacks = 2;
+
         }
 
-        int ICharacterClass.TotalHealth(int a, int b)
+        int ICharacterClass.TotalHealth(int a, int b, int c)
         {
-            return a * b;
+            return a + (b * c);
         }
 
     }
@@ -48,18 +61,24 @@ namespace TripleAGame
     {
         public string Name { get; }
         public int Level { get; set; }
+        public int StartingHealth { get; }
         public int HealthPerLevel { get; }
+        public int MaxDamage { get; }
+        public int Attacks { get; }
 
         public ThiefClass()
         {
             Name = "Thief";
+            StartingHealth = 80;
             HealthPerLevel = 8;
             Level = 1;
+            MaxDamage = 6;
+            Attacks = 3;
         }
 
-        int ICharacterClass.TotalHealth(int a, int b)
+        int ICharacterClass.TotalHealth(int a, int b, int c)
         {
-            return a * b;
+            return a + (b * c);
         }
 
     }
@@ -67,18 +86,24 @@ namespace TripleAGame
     {
         public string Name { get; }
         public int Level { get; set; }
+        public int StartingHealth { get; }
         public int HealthPerLevel { get; }
+        public int MaxDamage { get; }
+        public int Attacks { get; }
 
         public MageClass()
         {
             Name = "Mage";
+            StartingHealth = 70;
             HealthPerLevel = 6;
             Level = 1;
+            MaxDamage = 14;
+            Attacks = 1;
         }
 
-        int ICharacterClass.TotalHealth(int a, int b)
+        int ICharacterClass.TotalHealth(int a, int b, int c)
         {
-            return a * b;
+            return a + (b * c);
         }
 
     }
