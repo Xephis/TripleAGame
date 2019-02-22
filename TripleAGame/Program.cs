@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TripleAGame.Game;
 
 namespace TripleAGame
 {
@@ -8,11 +9,11 @@ namespace TripleAGame
         static void Main(string[] args)
         {
             // define character classes in a list
-            List<ICharacterClass> ListOfCharacterClasses = CharacterBox.GetCharacters();
+            List<CharacterClassStats> ListOfCharacterClasses = CharacterBox.GetCharacters();
 
             // get user to choose class
-            Console.WriteLine("Choose your class");
-            foreach (ICharacterClass item in ListOfCharacterClasses)
+            startgame:  Console.WriteLine("Choose your class");
+            foreach (CharacterClassStats item in ListOfCharacterClasses)
             {
                 Console.Write(item.Name + ", ");
             }
@@ -26,16 +27,15 @@ namespace TripleAGame
             ClassChoice = char.ToUpper(ClassChoice[0]) + ClassChoice.Substring(1).ToLower();
 
             // null the playercharacter to be able to get value out of foreach
-            ICharacterClass PlayerCharacter = null;
+            CharacterClassStats PlayerCharacter = null;
 
-            foreach (ICharacterClass item in ListOfCharacterClasses)
+            foreach (CharacterClassStats item in ListOfCharacterClasses)
             {
                 if (item.Name == ClassChoice)
                 {
                     PlayerCharacter = item;
                     break;
                 }
-
                 
             }
             
@@ -49,7 +49,15 @@ namespace TripleAGame
             Console.WriteLine("");
             Console.WriteLine("");
 
-            
+            GameClass Continue = new GameClass();
+
+            Continue.ContinueGame();
+
+            Console.WriteLine("Test Attack");
+            Console.WriteLine(PlayerCharacter.AttackDamage(PlayerCharacter.Attacks, PlayerCharacter.MaxDamage));
+
+
+
 
         }
     }

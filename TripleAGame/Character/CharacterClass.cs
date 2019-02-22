@@ -4,15 +4,8 @@ using System.Text;
 
 namespace TripleAGame
 {
-    public class PeasantClass : ICharacterClass
+    public class PeasantClass : CharacterClassStats
     {
-        public string Name { get; }
-        public int Level { get; set; }
-        public int StartingHealth { get; }
-        public int HealthPerLevel { get; }
-        public int MaxDamage { get; }
-        public int Attacks { get; }
-
 
         public PeasantClass()
         {
@@ -23,23 +16,10 @@ namespace TripleAGame
             MaxDamage = 1;
             Attacks = 1;
         }
-
-        int ICharacterClass.TotalHealth(int a, int b, int c)
-        {
-            return a + (b * c);
-        }
-
     }
-    public class WarriorClass : ICharacterClass
-    {
-        public string Name { get; }
-        public int Level { get; set; }
-        public int StartingHealth { get; }
-        public int HealthPerLevel { get;}
-        public int MaxDamage { get; }
-        public int Attacks { get; }
-        
 
+    public class WarriorClass : CharacterClassStats
+    {
         public WarriorClass()
         {
             Name = "Warrior";
@@ -48,23 +28,10 @@ namespace TripleAGame
             Level = 1;
             MaxDamage = 8;
             Attacks = 2;
-
         }
-
-        int ICharacterClass.TotalHealth(int a, int b, int c)
-        {
-            return a + (b * c);
-        }
-
     }
-    public class ThiefClass : ICharacterClass
+    public class ThiefClass : CharacterClassStats
     {
-        public string Name { get; }
-        public int Level { get; set; }
-        public int StartingHealth { get; }
-        public int HealthPerLevel { get; }
-        public int MaxDamage { get; }
-        public int Attacks { get; }
 
         public ThiefClass()
         {
@@ -75,49 +42,29 @@ namespace TripleAGame
             MaxDamage = 6;
             Attacks = 3;
         }
-
-        int ICharacterClass.TotalHealth(int a, int b, int c)
-        {
-            return a + (b * c);
-        }
-
     }
-    public class MageClass : ICharacterClass
+    public class MageClass : CharacterClassStats
     {
-        public string Name { get; }
-        public int Level { get; set; }
-        public int StartingHealth { get; }
-        public int HealthPerLevel { get; }
-        public int MaxDamage { get; }
-        public int Attacks { get; }
-
         public MageClass()
         {
             Name = "Mage";
             StartingHealth = 70;
             HealthPerLevel = 6;
             Level = 1;
-            MaxDamage = 14;
+            MaxDamage = 18;
             Attacks = 1;
         }
-
-        int ICharacterClass.TotalHealth(int a, int b, int c)
-        {
-            return a + (b * c);
-        }
-
     }
 
     public class CharacterBox
     {
-        public static List<ICharacterClass> GetCharacters()
+        public static List<CharacterClassStats> GetCharacters()
         {
-            List<ICharacterClass> CharacterList = new List<ICharacterClass>();
+            List<CharacterClassStats> CharacterList = new List<CharacterClassStats>();
             CharacterList.Add(new WarriorClass());
             CharacterList.Add(new ThiefClass());
             CharacterList.Add(new MageClass());
             CharacterList.Add(new PeasantClass());
-
             return CharacterList;
         }
         
